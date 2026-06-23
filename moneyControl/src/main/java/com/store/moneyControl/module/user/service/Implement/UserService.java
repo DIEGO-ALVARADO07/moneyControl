@@ -8,15 +8,19 @@ import com.store.moneyControl.module.user.mapper.UserMapper;
 import com.store.moneyControl.module.user.repository.IUserRepository;
 import com.store.moneyControl.module.user.service.Interface.IUserService;
 import com.store.moneyControl.shared.baseService.Implement.ABaseService;
-import com.store.moneyControl.shared.baseService.Interface.IBaseService;
+
 
 import java.util.UUID;
 
-public abstract class AUserService extends ABaseService<User,
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class UserService extends ABaseService<User,
         UserRequest,
         UserResponse,
         UUID> implements IUserService {
-    public AUserService(IUserRepository repository, UserMapper mapper){
+    public UserService(IUserRepository repository, UserMapper mapper){
         super(
                 repository,
                 mapper::toResponse,
