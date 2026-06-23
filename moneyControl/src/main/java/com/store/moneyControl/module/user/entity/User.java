@@ -16,7 +16,7 @@ import lombok.Setter;
 public class User extends BaseModel {
     @Column(length = 50, nullable = false)
     protected String UserName;
-
+    
     @Column(length = 50, nullable = false)
     protected String Password;
 }
