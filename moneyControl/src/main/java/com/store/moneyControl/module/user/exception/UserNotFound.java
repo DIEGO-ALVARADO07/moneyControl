@@ -2,8 +2,11 @@ package com.store.moneyControl.module.user.exception;
 
 import java.util.UUID;
 
-public class UserNotFound extends RuntimeException{
+import com.store.moneyControl.module.user.entity.User;
+import com.store.moneyControl.shared.baseException.baseException;
+
+public class UserNotFound extends baseException{
     public UserNotFound(UUID Id){
-        super("!Person not found: "+ Id);
+        super(User.class, Id);
     }
 }
